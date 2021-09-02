@@ -401,7 +401,7 @@ export class BottomNavigation extends TabNavigationBase {
 
         // _onAttachedToWindow called from OS again after it was detach
         // still happens with androidx.fragment:1.3.2
-        const activity = Application.android.foregroundActivity;
+        const activity = Application.android.startActivity;
         if ((this._manager && this._manager.isDestroyed()) || !activity.getLifecycle?.().getCurrentState().isAtLeast(androidx.lifecycle.Lifecycle.State.STARTED)) {
             return;
         }
